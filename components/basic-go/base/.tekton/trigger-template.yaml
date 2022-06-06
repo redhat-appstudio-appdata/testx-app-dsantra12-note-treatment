@@ -39,15 +39,12 @@ spec:
       - name: path-context
         value: .
       pipelineRef:
-        bundle: quay.io/redhat-appstudio/build-templates-bundle:861e28f4eb2380fd1531ee30a9e74fb6ce496b9f
+        bundle: quay.io/redhat-appstudio/build-templates-bundle:7170560e64e33af5fc37ba01531cbefdd2dc4fce
         name: docker-build
       workspaces:
       - name: workspace
         persistentVolumeClaim:
           claimName: appstudio
         subPath: basic-go/$(tt.params.git-revision)
-      - name: registry-auth
-        secret:
-          secretName: redhat-appstudio-registry-pull-secret
     status: {}
 status: {}
